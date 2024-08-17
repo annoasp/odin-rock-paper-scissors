@@ -7,9 +7,50 @@
 </head>
 <body>
     <script>
-        // console.log("Hello World")
+        // console.log("Hello World") - worked as expected
 
-        
+        // ** Initial Comments **
+
+        // * Computer's Choice *
+        // Create a function named getComputerChoice.
+        // Write the function so that it returns "rock", "paper" or "scissors". Math.random likely to be a good choice for selecting between the three options.
+        // Test that the function works as expected using console logs or developer tools.
+
+
+
+        // * The Human Choice *
+        // Create a function named getHumanChoice.
+        // Write the function so that it will return one of the three valid choices.
+        // Use prompt method to get their input, restricted to just "rock", "paper" or "scissors".
+        // Maybe worth encouraging the user to press "R", "P" or "S" and then converting the input to the proper strings after the fact.
+        // Again test using the tools available.
+
+
+
+        // * Declare the players' score variables *
+        // Create two new variables named humanScore and computerScore in the global scope.
+        // Initialise them with a value of 0 (integer).
+
+
+
+        // * Write the game logic for a single round *
+        // Create function named playRound.
+        // Define two parameters (humanChoice, computerChoice) for this function.
+        // humanChoice parameter needs to be case-insensitive, so it doesn't matter how the word was input by the user.
+        // Write code so that playRound logs a message to the console indicating the winner. Example given is "You lose! Paper beats rock".
+        // Increment humanScore or computerScore variable depending on the round winner in each case.
+
+
+
+        // * Write the logic to play the entire game *
+        // Each game lasts 5 rounds.
+        // Create function playGame.
+        // Move playRound function and scoring variables so that they are declared within the new playGame function.
+        // Call playRound 5 times, using a while loop perhaps? Initialise at 1 and then use remainder % 5 to quit after 5th round.
+        // Make sure to call choice functions each round, not the variables they produced initially, otherwise values of the variables won't update with new choices.
+        // Be open to re-writing my functions at this stage, or adding new helper functions.
+
+
 
     </script>
 </body>
