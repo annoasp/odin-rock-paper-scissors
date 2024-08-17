@@ -30,3 +30,12 @@ I also initially had an if statement, two else ifs and then an else, to capture 
 For the returns I also opted to return a lowercase string since it will save adding any extra steps in later functions. But it's easy enough to strip out that string method and just return the user's input directly if that makes more sense at a later stage.
 
 Testing shows it to be working as I'm expecting so far.
+
+
+Step 5 - Playing a single round
+
+I tried not to overthink this part too much, so some simple branching if/else statements, with the basic case being if the human's choice and the computer's choice both match, as that will lead to a draw and no gain in score.
+
+It did occur that it might look a bit cleaner with an initial if to see if the choices match, and then a switch statement underneath the else, with each case being one of the two remaining choice options and then a ternary operator used to decide between the results.
+
+I've stepped through playing rounds trying to cover every case and the winning statements and scoring variables all seem to be working as intended.

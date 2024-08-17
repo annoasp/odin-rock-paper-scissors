@@ -60,16 +60,50 @@
         // * Declare the players' score variables *
         // Create two new variables named humanScore and computerScore in the global scope.
         // Initialise them with a value of 0 (integer).
-
+        let humanScore = 0;
+        let computerScore = 0;
 
 
         // * Write the game logic for a single round *
         // Create function named playRound.
+        function playRound(humanChoice, computerChoice) {
+            // Compare choices to decide on the winner
+            // Write code so that playRound logs a message to the console indicating the winner. Example given is "You lose! Paper beats rock".
+            // Increment humanScore or computerScore variable depending on the round winner in each case.
+            if (humanChoice === computerChoice) {
+                console.log(alert("You both picked " + humanChoice + ", no winner this round!"))
+            } else if (humanChoice === "rock") {
+                if (computerChoice === "paper") {
+                    computerScore += 1;
+                    console.log(alert("You lose! Paper beats rock."))
+                } else {
+                    humanScore += 1;
+                    console.log(alert("You win! Rock beats scissors."))
+                }
+            } else if (humanChoice === "paper") {
+                if (computerChoice === "scissors") {
+                    computerScore += 1;
+                    console.log(alert("You lose! Scissors beats paper."))
+                } else {
+                    humanScore += 1;
+                    console.log(alert("You win! Paper beats rock."))
+                }
+            } else {
+                if (computerChoice === "rock") {
+                    computerScore += 1;
+                    console.log(alert("You lose! Rock beats scissors."))
+                } else {
+                    humanScore += 1;
+                    console.log(alert("You win! Scissors beats paper."))
+                }
+            }
+        }
+
         // Define two parameters (humanChoice, computerChoice) for this function.
         // humanChoice parameter needs to be case-insensitive, so it doesn't matter how the word was input by the user.
-        // Write code so that playRound logs a message to the console indicating the winner. Example given is "You lose! Paper beats rock".
-        // Increment humanScore or computerScore variable depending on the round winner in each case.
-
+        const humanSelection = getHumanChoice(); // - already case-insensitive output from the function
+        const computerSelection = getComputerChoice();
+        alert("The computer chose " + computerSelection + " this round.");
 
 
         // * Write the logic to play the entire game *
