@@ -36,6 +36,6 @@ Step 5 - Playing a single round
 
 I tried not to overthink this part too much, so some simple branching if/else statements, with the basic case being if the human's choice and the computer's choice both match, as that will lead to a draw and no gain in score.
 
-It did occur that it might look a bit cleaner with an initial if to see if the choices match, and then a switch statement underneath the else, with each case being one of the two remaining choice options and then a ternary operator used to decide between the results.
+It did occur that it might look a bit cleaner with an initial if to see if the choices match, and then a switch statement underneath the else with three cases listed ( covering rock, paper, scissors), each having a ternary operator to decide between the possible outcomes (computer wins, computer loses).
 
 I've stepped through playing rounds trying to cover every case and the winning statements and scoring variables all seem to be working as intended.
