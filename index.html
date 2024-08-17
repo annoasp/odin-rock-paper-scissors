@@ -16,7 +16,22 @@
         // Write the function so that it returns "rock", "paper" or "scissors". Math.random likely to be a good choice for selecting between the three options.
         // Test that the function works as expected using console logs or developer tools.
 
-
+        // Create function getComputerChoice - watch out with the typing of it!
+        function getComputerChoice() {
+            // Use Math.random to assign a random number between 0 and 1 to a new variable
+            const randomNumber = Math.random();
+            // console.log(randomNumber)
+            // if variable is less than 0.333, return "rock"
+            // else if between 0.333 and 0.666, return "paper"
+            // else return "scissors"
+            if (randomNumber < 0.333) {
+                return "rock"
+            } else if (randomNumber >= 0.333 && randomNumber < 0.666) {
+                return "paper"
+            } else {
+                return "scissors"
+            }
+        }
 
         // * The Human Choice *
         // Create a function named getHumanChoice.
