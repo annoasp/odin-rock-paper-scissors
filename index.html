@@ -40,7 +40,22 @@
         // Maybe worth encouraging the user to press "R", "P" or "S" and then converting the input to the proper strings after the fact.
         // Again test using the tools available.
 
-
+        // Create function getHumanChoice
+        function getHumanChoice() {
+            // while true
+            while (true) {
+                // collect user input via prompt, assigned to a new variable
+                let userChoice = prompt('Please select rock, paper or scissors.')
+                // if variable === "rock", return "rock", using string methods to make their input all lower case for the check
+                // else if variable === "paper", return "paper"
+                // else if variable === "scissors", return scissors
+                if (userChoice.toLowerCase() === "rock" || userChoice.toLowerCase() === "paper" || userChoice.toLowerCase() === "scissors") {
+                    return userChoice.toLowerCase()
+                } else {
+                    alert("You need to select rock, paper or scissors.")
+                }
+            }
+        }
 
         // * Declare the players' score variables *
         // Create two new variables named humanScore and computerScore in the global scope.
