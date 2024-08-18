@@ -57,64 +57,139 @@
             }
         }
 
-        // * Declare the players' score variables *
-        // Create two new variables named humanScore and computerScore in the global scope.
-        // Initialise them with a value of 0 (integer).
-        let humanScore = 0;
-        let computerScore = 0;
+        // // * Declare the players' score variables *
+        // // Create two new variables named humanScore and computerScore in the global scope.
+        // // Initialise them with a value of 0 (integer).
+        // let humanScore = 0;
+        // let computerScore = 0;
 
 
-        // * Write the game logic for a single round *
-        // Create function named playRound.
-        function playRound(humanChoice, computerChoice) {
-            // Compare choices to decide on the winner
-            // Write code so that playRound logs a message to the console indicating the winner. Example given is "You lose! Paper beats rock".
-            // Increment humanScore or computerScore variable depending on the round winner in each case.
-            if (humanChoice === computerChoice) {
-                console.log(alert("You both picked " + humanChoice + ", no winner this round!"))
-            } else if (humanChoice === "rock") {
-                if (computerChoice === "paper") {
-                    computerScore += 1;
-                    console.log(alert("You lose! Paper beats rock."))
-                } else {
-                    humanScore += 1;
-                    console.log(alert("You win! Rock beats scissors."))
-                }
-            } else if (humanChoice === "paper") {
-                if (computerChoice === "scissors") {
-                    computerScore += 1;
-                    console.log(alert("You lose! Scissors beats paper."))
-                } else {
-                    humanScore += 1;
-                    console.log(alert("You win! Paper beats rock."))
-                }
-            } else {
-                if (computerChoice === "rock") {
-                    computerScore += 1;
-                    console.log(alert("You lose! Rock beats scissors."))
-                } else {
-                    humanScore += 1;
-                    console.log(alert("You win! Scissors beats paper."))
-                }
-            }
-        }
+        // // * Write the game logic for a single round *
+        // // Create function named playRound.
+        // function playRound(humanChoice, computerChoice) {
+        //     // Compare choices to decide on the winner
+        //     // Write code so that playRound logs a message to the console indicating the winner. Example given is "You lose! Paper beats rock".
+        //     // Increment humanScore or computerScore variable depending on the round winner in each case.
+        //     if (humanChoice === computerChoice) {
+        //         console.log(alert("You both picked " + humanChoice + ", no winner this round!"))
+        //     } else if (humanChoice === "rock") {
+        //         if (computerChoice === "paper") {
+        //             computerScore += 1;
+        //             console.log(alert("You lose! Paper beats rock."))
+        //         } else {
+        //             humanScore += 1;
+        //             console.log(alert("You win! Rock beats scissors."))
+        //         }
+        //     } else if (humanChoice === "paper") {
+        //         if (computerChoice === "scissors") {
+        //             computerScore += 1;
+        //             console.log(alert("You lose! Scissors beats paper."))
+        //         } else {
+        //             humanScore += 1;
+        //             console.log(alert("You win! Paper beats rock."))
+        //         }
+        //     } else {
+        //         if (computerChoice === "rock") {
+        //             computerScore += 1;
+        //             console.log(alert("You lose! Rock beats scissors."))
+        //         } else {
+        //             humanScore += 1;
+        //             console.log(alert("You win! Scissors beats paper."))
+        //         }
+        //     }
+        // }
 
-        // Define two parameters (humanChoice, computerChoice) for this function.
-        // humanChoice parameter needs to be case-insensitive, so it doesn't matter how the word was input by the user.
-        const humanSelection = getHumanChoice(); // - already case-insensitive output from the function
-        const computerSelection = getComputerChoice();
-        alert("The computer chose " + computerSelection + " this round.");
+        // // Define two parameters (humanChoice, computerChoice) for this function.
+        // // humanChoice parameter needs to be case-insensitive, so it doesn't matter how the word was input by the user.
+        // const humanSelection = getHumanChoice(); // - already case-insensitive output from the function
+        // const computerSelection = getComputerChoice();
+        // alert("The computer chose " + computerSelection + " this round.");
 
 
         // * Write the logic to play the entire game *
         // Each game lasts 5 rounds.
         // Create function playGame.
-        // Move playRound function and scoring variables so that they are declared within the new playGame function.
-        // Call playRound 5 times, using a while loop perhaps? Initialise at 1 and then use remainder % 5 to quit after 5th round.
-        // Make sure to call choice functions each round, not the variables they produced initially, otherwise values of the variables won't update with new choices.
-        // Be open to re-writing my functions at this stage, or adding new helper functions.
+        function playGame () {
+            // Move playRound function and scoring variables so that they are declared within the new playGame function.
+            // Call playRound 5 times, using a while loop perhaps? Initialise at 1 and then use remainder % 5 to quit after 5th round. - will be wrong!
+            // Make sure to call choice functions each round, not the variables they produced initially, otherwise values of the variables won't update with new choices.
+            // Be open to re-writing my functions at this stage, or adding new helper functions.
 
+            // Declaring score variables
+            let humanScore = 0;
+            let computerScore = 0;
 
+            // Initialising a variable to store the round number in for the while loop
+            let roundTimer = 0;
+
+            // The while loop
+            while (roundTimer < 5) {
+
+                // First action picking choices for the new round
+                const humanSelection = getHumanChoice();
+                const computerSelection = getComputerChoice();
+                alert("The computer chose " + computerSelection + " this round.");
+
+                // Function for playing a round
+                function playRound(humanChoice, computerChoice) {
+                    if (humanChoice === computerChoice) {
+                        console.log("You both picked " + humanChoice + ", no winner this round!")
+                        return "draw"
+                    } else if (humanChoice === "rock") {
+                        if (computerChoice === "paper") {
+                            console.log("You lose! Paper beats rock.")
+                            return "lose"
+                        } else {
+                            console.log("You win! Rock beats scissors.")
+                            return "win"
+                        }
+                    } else if (humanChoice === "paper") {
+                        if (computerChoice === "scissors") {
+                            console.log("You lose! Scissors beats paper.")
+                            return "lose"
+                        } else {
+                            console.log("You win! Paper beats rock.")
+                            return "win"
+                        }
+                    } else {
+                        if (computerChoice === "rock") {
+                            console.log("You lose! Rock beats scissors.")
+                            return "lose"
+                        } else {
+                            console.log("You win! Scissors beats paper.")
+                            return "win"
+                        }
+                    }
+                }
+
+                // Executing the play of one round
+                let roundPlayed = playRound(humanSelection, computerSelection);
+                // return roundPlayed
+                // console.log(roundPlayed)
+
+                // Increment round timer by 1
+                roundTimer += 1
+
+                // If statements to increment scoring variables
+                if (roundPlayed === "win") {
+                    humanScore += 1;
+                } else if (roundPlayed === "lose") {
+                    computerScore += 1;
+                }
+            }
+
+            // If statements to check and report the winner after 5 rounds
+            if (humanScore > computerScore) {
+                console.log("Congratulations! You've won with a score of " + humanScore + "-" + computerScore + ".")
+            } else if (humanScore < computerScore) {
+                console.log("So sorry, you've lost. The computer beat you with a score of " + computerScore + "-" + humanScore + ".")
+            } else {
+                console.log("Neither of you won this time around, the score was " + humanScore + "-" + computerScore + ".")
+            }
+        }
+
+        // Play one game of 5 rounds
+        playGame()
 
     </script>
 </body>

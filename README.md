@@ -39,3 +39,16 @@ I tried not to overthink this part too much, so some simple branching if/else st
 It did occur that it might look a bit cleaner with an initial if to see if the choices match, and then a switch statement underneath the else with three cases listed ( covering rock, paper, scissors), each having a ternary operator to decide between the possible outcomes (computer wins, computer loses).
 
 I've stepped through playing rounds trying to cover every case and the winning statements and scoring variables all seem to be working as intended.
+
+
+Step 6 - Setting it up to play a full game of 5 rounds
+
+Okay so this was a more complicated step. I opted to structure it as a while loop for the play game function, with a new variable created to store the number of rounds in so there was something to check against.
+
+Moving the scoring variables and the play a round function within the play game function necessitated some changes. I simplified the play a round function in a sense, stripping out the incrementing of the scores and instead returning a string of "win", "lose" or "draw". To play a round I then created a new variable to store the string result in, incremented the round timer by 1, and then used if statements to figure out which score needed to be updated.
+
+Once the 5 rounds were played the while loop then breaks out, and there are some final if statements to figure out who actually won the game so it could be reported to the user. And one last line of code to actually start the game playing upon loading the page.
+
+It was quite a fun experience really, I'm not sure if my chosen way of alerting the results was necessarily what was being looked for, but it felt like it kept the user informed of the game's progress, without requiring a whole lot of extra work.
+
+I didn't actually use any helper functions, but perhaps some might have let me cut down on the use of all the if statements. I can always try and refactor the game if I come back to it at a later point in my progress through the course.
